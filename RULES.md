@@ -4,13 +4,10 @@
 **Bài cá nhân.** Mỗi người một mã số (MSSV), một task CVAT `D13-<MÃ SỐ>` trên CVAT của máy mình, một repo (tạo từ repo đề bằng **Use this template**). Commit dưới tên của bạn. Ngồi theo cặp để đổi kiểm ở cuối buổi.
 
 ## Sản phẩm là của bạn
-- Mọi cuboid trong task `D13-<MÃ SỐ>` do **bạn** vẽ. Không vẽ hộ, không nhờ vẽ hộ, không dùng mã số của người khác để tạo task. Mã chung của vòng hiệu chuẩn chỉ dùng cho vòng đó và cho Bước 4.
-- Mỗi mã số nhận 10 frame, nhưng nhiều frame trùng với bạn khác. Được bàn về cách hiểu guideline, ca khó, lỗi CVAT; gọi ca khó bằng **tên frame và vị trí** ("s02f07, xe trắng bên trái khoảng 10 m"). **Không** gửi, chép hay so file bảng A với nhau. Bảng A của mọi người đều nằm trên repo public: chép cuboid từ bảng A của người khác là gian lận, và coach có thể so trùng giữa các bài. Không mở bảng A, phiếu tự kiểm trong repo của bạn khác cho tới khi có điểm, kể cả chỉ để tìm vật trên frame trùng. Khi đổi kiểm, chỉ xem trên màn hình.
+- Mọi cuboid trong task `D13-<MÃ SỐ>` không dùng mã số của người khác để tạo task. Mã chung của vòng hiệu chuẩn chỉ dùng cho vòng đó và cho Bước 4.
+- Mỗi mã số nhận 10 frame, nhưng nhiều frame trùng với bạn khác. Được bàn về cách hiểu guideline, ca khó, lỗi CVAT; gọi ca khó bằng **tên frame và vị trí** ("s02f07, xe trắng bên trái khoảng 10 m"). 
 - Frame mượn cho phần bốn hiện tượng phải **ghi rõ nguồn** trong báo cáo mục 4: task chung, hoặc MSSV của bạn cho mượn.
-- Được dùng AI để hỏi về lệnh Python, PowerShell, Terminal, Docker, cách dùng CVAT, hoặc một khái niệm (yaw, BEV, intensity…).
-  **Không** đưa cho AI hay dịch vụ ngoài: ảnh camera, ảnh trong `work/xem/`, ảnh chụp màn hình, mọi file trong `data/data-VF/` (kể cả `calib.json`). Không nhờ AI vẽ cuboid, viết dòng nhận xét, đọc bảng A hộ hay điền số.
-  Ghi 3 dòng (công cụ, câu hỏi chính, bạn dùng kết quả thế nào) trong báo cáo mục 6, hoặc ghi "không dùng".
-
+- Được dùng AI 
 ## Tính trung thực của số liệu
 - **Không sửa tay** bảng A (`submission/D13-<MÃ SỐ>-bangA.csv`) và phiếu tự kiểm (`submission/D13-<MÃ SỐ>-tukiem.csv`). Muốn đổi số thì sửa cuboid trên CVAT, Save, rồi chạy lại `python scripts/lab.py sync`. `check_submission.py` báo LỖI khi bảng A bị bảng tính lưu lại, hoặc bị sửa tay làm sai định dạng hay lệch các cột tính từ nhau. Nó không bắt được mọi kiểu sửa tay: hết LỖI không có nghĩa là sửa tay thì được.
 - Không mở bảng A bằng Excel rồi **lưu đè**: chỉ mở để đọc.
@@ -20,10 +17,7 @@
 - Các bạn vẽ giống nhau chỉ cho thấy **nhất quán**, không chứng minh cuboid **đúng**. Guideline và coach là căn cứ phân xử.
 - Nộp bản đầu ở mốc CP7 (19:30), được sửa và nộp lại tới deadline **23:59 GMT+7 ngày làm lab** ([SUBMISSION.md](SUBMISSION.md)). Commit sau deadline: mục "Nộp muộn" bên dưới. Lỗi phát hiện thêm sau deadline thì ghi vào báo cáo mục 6(c) bằng commit mới (không chấm, không thay commit được chấm).
 
-## Dữ liệu và giấy phép
-- Dữ liệu VF là dữ liệu lái xe thực tế của dự án, **chỉ dùng trong lớp**. Bạn được cấp vì đã ký cam kết bảo mật. Ảnh camera có người và biển số thật.
-- Link tải và mật khẩu giải nén do GV gửi riêng: không chép vào repo, báo cáo hay nhóm chat.
-- `data/data-VF/` chỉ nằm trên máy bạn và trong CVAT trên máy bạn. Không tải lên Drive cá nhân, GitHub, chatbot AI, hay CVAT online. Không để repo, dữ liệu, ảnh chụp trong thư mục tự đồng bộ lên mây (OneDrive, iCloud "Desktop & Documents", Google Drive): xem [docs/SETUP.md](docs/SETUP.md) mục 3.
+
 - **Repo của bạn là public**: chứa báo cáo, cấu hình, bảng A và phiếu tự kiểm (số đo các cuboid bạn vẽ, và số điểm LiDAR đếm trong, quanh từng cuboid; coach cho phép công khai đúng các số này). Không commit point cloud (`.bin`, `.pcd`), ảnh camera, ảnh xem trước (`work/xem/`), ảnh chụp màn hình, file zip. `.gitignore` đã chặn; đừng sửa các dòng đó, đừng dùng `git add -f`.
 - Ảnh chụp màn hình **nộp qua LMS** trong file zip (`python scripts/lab.py pack`). Không gửi vào nhóm chat hay mạng xã hội.
 - Báo cáo nằm trên repo public: mô tả chung (loại vật, màu, trái hay phải, cách khoảng bao nhiêu mét). **Không** chép biển số, chữ trên biển hiệu hay biển chỉ đường, tên đường, địa danh, đặc điểm nhận dạng một người. Nhắc tới bạn khác thì ghi MSSV, không ghi họ tên.
